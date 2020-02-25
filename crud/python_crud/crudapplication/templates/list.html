@@ -1,0 +1,27 @@
+<div class="container">
+    {% include "./bootstrap.html" %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td scope="col">{{employee.eName}}</td>
+                <td scope="col">{{employee.eContact}}</td>
+                <td scope="col">{{employee.eEmail}}</td>
+                <td scope="col"><a href="/edit/{{employee.id}}"><button>Edit</button></a></td>
+                <td scope="col"><a href="/delete/{{employee.id}}"><button>Delete</button></a></td>
+            </tr>
+
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+</div>
